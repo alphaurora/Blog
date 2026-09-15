@@ -37,4 +37,8 @@ python3 -m http.server 8000 --directory dist
 
 ## GitHub 更新
 
-包含自动生成流程：提交 `content/`、`site.json`、`build.py` 后，GitHub Actions 会重建并提交静态网页。流程需要仓库允许 Actions 写入内容。Sites 版本需再次发布后才会更新线上网页。
+网站地址：https://alphaurora.github.io/Blog/
+
+向 `main` 分支提交 `content/`、`site.json`、`build.py`、`requirements.txt` 或 `dist/` 的变更后，GitHub Actions 会重新生成网页并自动发布到 GitHub Pages。可在仓库 Actions 页面查看发布进度，也可手动运行 Deploy blog to GitHub Pages。
+
+Pages 发布源设为 GitHub Actions。构建产物直接发布，不自动提交回源码仓库。原 Sites 地址独立管理，不随此流程更新。
