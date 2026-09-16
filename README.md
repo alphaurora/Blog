@@ -42,3 +42,17 @@ python3 -m http.server 8000 --directory dist
 向 `main` 分支提交 `content/`、`site.json`、`build.py`、`requirements.txt` 或 `dist/` 的变更后，GitHub Actions 会重新生成网页并自动发布到 GitHub Pages。可在仓库 Actions 页面查看发布进度，也可手动运行 Deploy blog to GitHub Pages。
 
 Pages 发布源设为 GitHub Actions。构建产物直接发布，不自动提交回源码仓库。原 Sites 地址独立管理，不随此流程更新。
+
+## 网页写作（Pages CMS）
+
+入口：https://alphaurora.github.io/Blog/admin/
+
+首次在 https://app.pagescms.org 使用 GitHub 登录，安装 Pages CMS GitHub App 时只选择 `Blog` 仓库。在 CMS 中选择 `alphaurora/Blog` 的 `main` 分支即可读取 `.pages.yml` 配置。
+
+- 「文章」支持在线新建、编辑、源码/可视化切换和配图上传。
+- 新文章默认 `draft: true`。关闭草稿后保存，自动发布到 GitHub Pages。
+- 已发表文章改为草稿或删除后，会在下一次成功部署时从网站移除。
+- **草稿仍保存在公开仓库，不是私密存储。** 草稿修改历史也属于 Git 历史。
+- 图片保存在 `dist/media/`，网页路径为 `/Blog/media/`。
+- 「博客设置」可编辑名称、首页文案和 GitHub 主页。
+- GitHub Pages 只提供后台入口页面，编辑器与认证由 Pages CMS 提供。未授权者无法修改仓库；GitHub 凭证不写入本站代码。

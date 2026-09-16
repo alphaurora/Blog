@@ -3,6 +3,7 @@ title: 把注意力，留给文字。
 date: 2026-09-12
 category: 技术笔记
 description: 用 Markdown 建立一个轻盈、可持续的写作习惯。
+draft: false
 ---
 
 一个文件，一段想法，就可以开始写作。Markdown 让内容不被复杂的编辑界面打断，也让文字可以跟随你迁移。

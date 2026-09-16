@@ -1,0 +1,63 @@
+media:
+  input: dist/media
+  output: /Blog/media
+  extensions: [png, jpg, jpeg, webp, gif, avif]
+  rename: random
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: content
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      template: '{year}-{month}-{day}-{hour}{minute}{second}-{primary}.md'
+      field: create
+    view:
+      primary: title
+      fields: [title, date, category, draft]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 日期
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+          time: false
+      - name: category
+        label: 分类
+        type: string
+        required: true
+        default: 日常随笔
+      - name: description
+        label: 摘要
+        type: text
+        required: true
+      - name: draft
+        label: 草稿（不显示在博客）
+        type: boolean
+        default: true
+        description: 关闭后保存即可发布。公开仓库中的草稿仍可被查看，请勿写入私密内容。
+      - name: body
+        label: 正文
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: true
+  - name: site
+    label: 博客设置
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - {name: name, label: 博客名称, type: string, required: true}
+      - {name: title, label: 首页标题, type: string, required: true}
+      - {name: description, label: 首页简介, type: text, required: true}
+      - {name: github, label: GitHub 主页地址, type: string, required: true}

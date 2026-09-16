@@ -3,6 +3,7 @@ title: 慢下来，才看得见。
 date: 2026-09-08
 category: 日常随笔
 description: 给没有安排的时间，留一个位置。
+draft: false
 ---
 
 有些想法，出现在没有试图寻找答案的时候。
